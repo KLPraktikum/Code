@@ -13,6 +13,7 @@ from barcode_db import update_punktezahl
 # Kleiner Bildschirm fuer Ausgabe / evtl. Touchscreen zum Beenden?
 
 def main():
+    line = []
     ser = serial.Serial('/dev/ttyUSB0')  # open serial port
     print(ser.name)  # check which port was really used
 
@@ -33,19 +34,39 @@ def main():
 
             if query_answer[0][2] == 1:
                 print(str(query_answer[0][1])+" gehört in die gelbe Tonne")
-                ser.write('1')
+                ser.write(str.encode("1"))
+                line = ser.readline()
+                if (line == 's')
+                    ser.write(str.encode("5"))
+                if (line == 't')
+                    ser.write(str.encode("5"))
 
             if query_answer[0][3] == 1:
                print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
-               ser.write('2')
+               ser.write(str.encode("2"))
+               line = ser.readline()
+               if (line == 's')
+                   ser.write(str.encode("5"))
+               if (line == 't')
+                   ser.write(str.encode("5"))
 
             if query_answer[0][4] == 1:
                 print(str(query_answer[0][1])+" gehört in die grüne Tonne")
-                ser.write('3')
+                ser.write(str.encode("3"))
+                line = ser.readline()
+                if (line == 's')
+                    ser.write(str.encode("5"))
+                if (line == 't')
+                    ser.write(str.encode("5"))
 
             if query_answer[0][5] == 1:
                 print(str(query_answer[0][1])+" gehört in die Bio Tonne")
-                ser.write('4')
+                ser.write(str.encode("4"))
+                line = ser.readline()
+                if (line == 's')
+                    ser.write(str.encode("5"))
+                if (line == 't')
+                    ser.write(str.encode("5"))
 
             if query_answer[0][6] == 1:
                 print(str(query_answer[0][1])+" gehört in die Braunglas Tonne")
