@@ -15,8 +15,6 @@ from barcode_db import update_punktezahl
 def main():
     ser = serial.Serial('/dev/ttyUSB0')  # open serial port
     print(ser.name)  # check which port was really used
-    ser.write(b'hello')  # write a string
-    ser.close()  # close port
 
     bonuspunkte = 0
     print("Barcode einlesen.")
