@@ -36,37 +36,45 @@ def main():
                 print(str(query_answer[0][1])+" gehört in die gelbe Tonne")
                 ser.write(str.encode("1"))
                 line = ser.readline()
-                if (line == 's')
+                if (line[0] == 's'):
                     ser.write(str.encode("5"))
-                if (line == 't')
+                    line[0] ==''
+                if (line[0] == 't'):
                     ser.write(str.encode("6"))
+                    line[0] == ''
 
             if query_answer[0][3] == 1:
                print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
                ser.write(str.encode("2"))
                line = ser.readline()
-               if (line == 's')
+               if (line[0] == 's'):
                    ser.write(str.encode("5"))
-               if (line == 't')
+                   line[0] = ''
+               if (line[0] == 't'):
                    ser.write(str.encode("6"))
+                   line[0] = ''
 
             if query_answer[0][4] == 1:
                 print(str(query_answer[0][1])+" gehört in die grüne Tonne")
                 ser.write(str.encode("3"))
                 line = ser.readline()
-                if (line == 's')
+                if (line[0] == 's'):
                     ser.write(str.encode("5"))
-                if (line == 't')
+                    line[0] =''
+                if (line[0] == 't'):
                     ser.write(str.encode("6"))
+                    line[0] = ''
 
             if query_answer[0][5] == 1:
                 print(str(query_answer[0][1])+" gehört in die Bio Tonne")
                 ser.write(str.encode("4"))
                 line = ser.readline()
-                if (line == 's')
+                if (line[0] == 's'):
                     ser.write(str.encode("5"))
-                if (line == 't')
+                    line[0] =''
+                if (line[0] == 't'):
                     ser.write(str.encode("6"))
+                    line[0] = ''
 
             if query_answer[0][6] == 1:
                 print(str(query_answer[0][1])+" gehört in die Braunglas Tonne")
