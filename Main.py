@@ -39,7 +39,7 @@ def main():
                 if (line == 's')
                     ser.write(str.encode("5"))
                 if (line == 't')
-                    ser.write(str.encode("5"))
+                    ser.write(str.encode("6"))
 
             if query_answer[0][3] == 1:
                print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
@@ -48,7 +48,7 @@ def main():
                if (line == 's')
                    ser.write(str.encode("5"))
                if (line == 't')
-                   ser.write(str.encode("5"))
+                   ser.write(str.encode("6"))
 
             if query_answer[0][4] == 1:
                 print(str(query_answer[0][1])+" gehört in die grüne Tonne")
@@ -57,7 +57,7 @@ def main():
                 if (line == 's')
                     ser.write(str.encode("5"))
                 if (line == 't')
-                    ser.write(str.encode("5"))
+                    ser.write(str.encode("6"))
 
             if query_answer[0][5] == 1:
                 print(str(query_answer[0][1])+" gehört in die Bio Tonne")
@@ -66,7 +66,7 @@ def main():
                 if (line == 's')
                     ser.write(str.encode("5"))
                 if (line == 't')
-                    ser.write(str.encode("5"))
+                    ser.write(str.encode("6"))
 
             if query_answer[0][6] == 1:
                 print(str(query_answer[0][1])+" gehört in die Braunglas Tonne")
