@@ -1,6 +1,9 @@
+import serial
+
 from barcode_db import get_barcodes_by_name
 from barcode_db import close_db
 from barcode_db import update_punktezahl
+
 
 #Programm fuer das Barcode einlesen
 
@@ -10,6 +13,10 @@ from barcode_db import update_punktezahl
 # Kleiner Bildschirm fuer Ausgabe / evtl. Touchscreen zum Beenden?
 
 def main():
+    ser = serial.Serial('/dev/ttyUSB0')  # open serial port
+    print(ser.name)  # check which port was really used
+    ser.write(b'hello')  # write a string
+    ser.close()  # close port
 
     bonuspunkte = 0
     print("Barcode einlesen.")

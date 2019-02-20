@@ -28,7 +28,10 @@ c.execute("""CREATE TABLE barcodes(
 
 barcode_1 = Barcode(40269474, 'Mozart Quelle Wasserflasche', 0, 1, 0, 0, 0, 0, 1, 3.0)
 barcode_2 = Barcode(10, 'Test1', 1, 0, 1, 1, 0, 0, 0, 50.0)
-barcode_3 = Barcode(123456789123, 'User', 0, 0, 0, 0, 0, 0, 0, 0.0)
+barcode_3 = Barcode(123456, 'User', 0, 0, 0, 0, 0, 0, 0, 0.0)
+barcode_4 = Barcode(4001513009708, 'Gerolsteiner Wasser', 1, 0, 0, 0, 0, 0, 0, 20.0)
+
+
 
 def insert_barcode(barcode):
     with conn:
@@ -52,5 +55,5 @@ def close_db():
 insert_barcode(barcode_1)
 insert_barcode(barcode_2)
 insert_barcode(barcode_3)
-
+insert_barcode(barcode_4)
 #conn.close()
