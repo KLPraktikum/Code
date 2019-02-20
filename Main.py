@@ -35,18 +35,19 @@ def main():
 
             if query_answer[0][2] == 1:
                 print(str(query_answer[0][1])+" gehört in die gelbe Tonne")
-                #passende LED ansteuern
+                ser.write('1')
 
             if query_answer[0][3] == 1:
                print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
-               # passende LED ansteuern
+               ser.write('2')
 
             if query_answer[0][4] == 1:
                 print(str(query_answer[0][1])+" gehört in die grüne Tonne")
-               # passende LED ansteuern
+                ser.write('3')
 
             if query_answer[0][5] == 1:
                 print(str(query_answer[0][1])+" gehört in die Bio Tonne")
+                ser.write('4')
 
             if query_answer[0][6] == 1:
                 print(str(query_answer[0][1])+" gehört in die Braunglas Tonne")
