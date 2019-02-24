@@ -7,10 +7,6 @@ from barcode_db import update_punktezahl
 
 #Programm fuer das Barcode einlesen
 
-# To Do:
-# LEDS ansteuern
-# Sensoren fuer Muellstand hinzufuegen und Szenario, wenn Muell voll
-# Kleiner Bildschirm fuer Ausgabe / evtl. Touchscreen zum Beenden?
 
 def main():
     line = []
@@ -22,6 +18,7 @@ def main():
 
     while(1):
         barcodestring = input()
+        bonuspunkte = 0
 
         if get_barcodes_by_name(barcodestring):
             query_answer = get_barcodes_by_name(barcodestring)
@@ -37,10 +34,12 @@ def main():
                 ser.write(str.encode("1"))
                 line = ser.readline()
                 if (line[0] == 's'):
-                    ser.write(str.encode("5"))
+                    #ser.write(str.encode("5"))
                     line[0] ==''
+                    gutschrift = bonuspunkte
+
                 if (line[0] == 't'):
-                    ser.write(str.encode("6"))
+                    #ser.write(str.encode("6"))
                     line[0] == ''
 
             if query_answer[0][3] == 1:
@@ -48,10 +47,11 @@ def main():
                ser.write(str.encode("2"))
                line = ser.readline()
                if (line[0] == 's'):
-                   ser.write(str.encode("5"))
+                   gutschrift = bonuspunkte
+                   #ser.write(str.encode("5"))
                    line[0] = ''
                if (line[0] == 't'):
-                   ser.write(str.encode("6"))
+                   #ser.write(str.encode("6"))
                    line[0] = ''
 
             if query_answer[0][4] == 1:
@@ -59,7 +59,8 @@ def main():
                 ser.write(str.encode("3"))
                 line = ser.readline()
                 if (line[0] == 's'):
-                    ser.write(str.encode("5"))
+                    #ser.write(str.encode("5"))
+                    gutschrift = bonuspunkte
                     line[0] =''
                 if (line[0] == 't'):
                     ser.write(str.encode("6"))
@@ -70,7 +71,8 @@ def main():
                 ser.write(str.encode("4"))
                 line = ser.readline()
                 if (line[0] == 's'):
-                    ser.write(str.encode("5"))
+                    #ser.write(str.encode("5"))
+                    gutschrift = bonuspunkte
                     line[0] =''
                 if (line[0] == 't'):
                     ser.write(str.encode("6"))
@@ -89,9 +91,10 @@ def main():
                 # passende LED ansteuern
 
             if query_answer[0][1] == 'User':
-                update_punktezahl(query_answer[0][0], bonuspunkte)
+                update_punktezahl(query_answer[0][0], gutschrift)
                 user_punktzahl_update = get_barcodes_by_name(barcodestring)
                 print(user_punktzahl_update)
+                ser.write(str.encode("7"))
                 break
 
         elif (barcodestring =='Ende'):
@@ -101,7 +104,7 @@ def main():
         else:
             print("Barcode nicht in Datenbank vorhanden")
 
-    print("Es wurden " + str(bonuspunkte) + " Bonuspunkte gesammelt")
+    print("Es wurden " + str(gutschrift) + " Bonuspunkte gesammelt")
 
     close_db()
 
