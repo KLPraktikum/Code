@@ -26,10 +26,14 @@ c.execute("""CREATE TABLE barcodes(
             punkte real
             )""")
 
-barcode_1 = Barcode(40269474, 'Mozart Quelle Wasserflasche', 0, 1, 0, 0, 0, 0, 1, 3.0)
+barcode_1 = Barcode(40269474, 'Mozart Quelle Wasserflasche', 0, 1, 0, 0, 0, 0, 1, 5.0)
 barcode_2 = Barcode(10, 'Test1', 1, 0, 1, 1, 0, 0, 0, 50.0)
-barcode_3 = Barcode(123456, 'User', 0, 0, 0, 0, 0, 0, 0, 0.0)
-barcode_4 = Barcode(4001513009708, 'Gerolsteiner Wasser', 1, 0, 0, 0, 0, 0, 0, 20.0)
+barcode_4 = Barcode(4001513009708, 'Gerolsteiner Wasser', 1, 0, 0, 0, 0, 0, 0, 5.0)
+barcode_5 = Barcode(2403630299796,'User', 0, 0, 0, 0, 0, 0, 0, 0.0)
+barcode_6 = Barcode(4311596464494,'Gut und Guenstig Latte Espresso', 1, 0, 0, 0, 0, 0, 0, 10.0)
+barcode_7 = Barcode(4010054005889,'Erfrischungstuecher', 0, 0, 1, 0, 0, 0, 0, 5.0)
+barcode_8 = Barcode(4104420083707,'Babynahrung', 0, 1, 0, 0, 0, 0, 0, 5.0)
+barcode_9 = Barcode(4001686313046,'Gummibaeren', 1, 0, 0, 0, 0, 0, 0, 5.0)
 
 
 
