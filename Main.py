@@ -61,7 +61,7 @@ def main():
                     bonuspunkte = bonuspunkte + int(query_answer[0][9])
                     line[0] = ''
                 if (line[0] == 't'):
-                    ser.write(str.encode("6"))
+                    #ser.write(str.encode("6"))
                     line[0] = ''
 
             if query_answer[0][5] == 1:
@@ -73,7 +73,7 @@ def main():
                     bonuspunkte = bonuspunkte + int(query_answer[0][9])
                     line[0] = ''
                 if (line[0] == 't'):
-                    ser.write(str.encode("6"))
+                    #ser.write(str.encode("6"))
                     line[0] = ''
 
             if query_answer[0][6] == 1:
