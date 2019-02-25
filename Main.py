@@ -9,16 +9,19 @@ from barcode_db import update_punktezahl
 
 
 def main():
-    line = []
-    ser = serial.Serial('/dev/ttyUSB0')  # open serial port
+    ser = serial.Serial('/dev/ttyUSB0', 115200)  # open serial port
+    #ser.open()
     print(ser.name)  # check which port was really used
+    line = ser.readline().decode()
+
+    while( not(line.find("Ready") >= 0)):
+        line = ser.readline().decode()
 
     bonuspunkte = 0
     print("Barcode einlesen.")
 
     while(1):
         barcodestring = input()
-        bonuspunkte = 0
 
         if get_barcodes_by_name(barcodestring):
             query_answer = get_barcodes_by_name(barcodestring)
@@ -29,52 +32,83 @@ def main():
 
             if query_answer[0][2] == 1:
                 print(str(query_answer[0][1])+" gehört in die gelbe Tonne")
-                ser.write("1".encode())
-                line = ser.readline()
-                if (line[0] == 's'):
-                    #ser.write(str.encode("5"))
-                    line[0] == ''
-                    bonuspunkte = bonuspunkte + int(query_answer[0][9])
+                ser.write(str.encode("0"))
+                ser.flush()
 
-                if (line[0] == 't'):
+                while(1):
+                    line = ser.readline().decode()
+                    print(line)
+                    if (line.find("s") >= 0):
+                    #ser.write(str.encode("5"))
+                        print("s erhalten")
+                        line[0] == ''
+                        bonuspunkte = bonuspunkte + int(query_answer[0][9])
+                        break
+                    if (line.find('t') >= 0):
                     #ser.write(str.encode("6"))
-                    line[0] == ''
+                        print("timeout")
+                        line[0] == ''
+                        break
 
             if query_answer[0][3] == 1:
-               print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
-               ser.write("2".encode())
-               line = ser.readline()
-               if (line[0] == 's'):
-                   bonuspunkte = bonuspunkte + int(query_answer[0][9])
-                   #ser.write(str.encode("5"))
-                   line[0] = ''
-               if (line[0] == 't'):
-                   #ser.write(str.encode("6"))
-                   line[0] = ''
+                print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
+                ser.write(str.encode("1"))
+                ser.flush()
+
+                while(1):
+                    line = ser.readline().decode()
+                    print(line)
+                    if (line.find("s") >= 0):
+                    #ser.write(str.encode("5"))
+                        print("s erhalten")
+                        line[0] == ''
+                        bonuspunkte = bonuspunkte + int(query_answer[0][9])
+                        break
+                    if (line.find('t') >= 0):
+                    #ser.write(str.encode("6"))
+                        print("timeout")
+                        line[0] == ''
+                        break
 
             if query_answer[0][4] == 1:
                 print(str(query_answer[0][1])+" gehört in die grüne Tonne")
-                ser.write(str.encode("3"))
-                line = ser.readline()
-                if (line[0] == 's'):
+                ser.write(str.encode("2"))
+                ser.flush()
+
+                while(1):
+                    line = ser.readline().decode()
+                    print(line)
+                    if (line.find("s") >= 0):
                     #ser.write(str.encode("5"))
-                    bonuspunkte = bonuspunkte + int(query_answer[0][9])
-                    line[0] = ''
-                if (line[0] == 't'):
+                        print("s erhalten")
+                        line[0] == ''
+                        bonuspunkte = bonuspunkte + int(query_answer[0][9])
+                        break
+                    if (line.find('t') >= 0):
                     #ser.write(str.encode("6"))
-                    line[0] = ''
+                        print("timeout")
+                        line[0] == ''
+                        break
 
             if query_answer[0][5] == 1:
                 print(str(query_answer[0][1])+" gehört in die Bio Tonne")
-                ser.write(str.encode("4"))
-                line = ser.readline()
-                if (line[0] == 's'):
+                ser.write(str.encode("3"))
+                ser.flush()
+
+                while(1):
+                    line = ser.readline().decode()
+                    print(line)
+                    if (line.find("s") >= 0):
                     #ser.write(str.encode("5"))
-                    bonuspunkte = bonuspunkte + int(query_answer[0][9])
-                    line[0] = ''
-                if (line[0] == 't'):
+                        print("s erhalten")
+                        line[0] == ''
+                        bonuspunkte = bonuspunkte + int(query_answer[0][9])
+                        break
+                    if (line.find('t') >= 0):
                     #ser.write(str.encode("6"))
-                    line[0] = ''
+                        print("timeout")
+                        line[0] == ''
+                        break
 
             if query_answer[0][6] == 1:
                 print(str(query_answer[0][1])+" gehört in die Braunglas Tonne")
@@ -96,6 +130,7 @@ def main():
                 user_punktzahl_update = get_barcodes_by_name(barcodestring)
                 print(user_punktzahl_update)
                 ser.write(str.encode("7"))
+                ser.flush()
                 print("Es wurden " + str(bonuspunkte) + " Bonuspunkte gesammelt")
                 bonuspunkte = 0
                 break

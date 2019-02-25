@@ -105,20 +105,21 @@ void setup()
 
   FastLED.addLeds<LED_TYPE, DATA_PIN, CLK_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
   FastLED.setBrightness(BRIGHTNESS);
+  Serial.println("Ready");
 }
 
 void loop() {
-  Serial.println("Awaiting Input");
+  //Serial.println("Awaiting Input");
   delay(100);
   if (Serial.available() > 0)  {
-    Serial.println("Processing Input");
+    //Serial.println("Processing Input");
     int selection = Serial.parseInt();
     while (Serial.available()) {
       Serial.read();
     }
 
     if (selection == 7)  {
-      fill_rainbow(leds, NUM_LEDS, 222);
+      fill_rainbow(leds, NUM_LEDS, 15);
       FastLED.show();
       delay(1000);
       fill_solid(leds, NUM_LEDS, CHSV( 0, 0, 0));
