@@ -29,7 +29,7 @@ def main():
 
             if query_answer[0][2] == 1:
                 print(str(query_answer[0][1])+" gehört in die gelbe Tonne")
-                ser.write(str.encode("1"))
+                ser.write("1".encode())
                 line = ser.readline()
                 if (line[0] == 's'):
                     #ser.write(str.encode("5"))
@@ -42,7 +42,7 @@ def main():
 
             if query_answer[0][3] == 1:
                print(str(query_answer[0][1])+" gehört in die schwarze Tonne")
-               ser.write(str.encode("2"))
+               ser.write("2".encode())
                line = ser.readline()
                if (line[0] == 's'):
                    bonuspunkte = bonuspunkte + int(query_answer[0][9])
