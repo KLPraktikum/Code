@@ -1,6 +1,0 @@
-[submodule "VL53L0X-tof-sensor-board"]
-	path = VL53L0X-tof-sensor-board
-	url = https://github.com/cvra/VL53L0X-tof-sensor-board.git
-[submodule "CAD/ECAD/VL53L0X-tof-sensor-board"]
-	path = CAD/ECAD/VL53L0X-tof-sensor-board
-	url = https://github.com/cvra/VL53L0X-tof-sensor-board.git
