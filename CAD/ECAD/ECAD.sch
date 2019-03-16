@@ -1,0 +1,337 @@
+EESchema Schematic File Version 4
+LIBS:ECAD-cache
+LIBS:tof-sensor-board-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L tof-sensor-board-cache:VL53L0X U?
+U 1 1 5C8D3568
+P 2050 2400
+F 0 "U?" H 2050 3087 60  0000 C CNN
+F 1 "VL53L0X" H 2050 2981 60  0000 C CNN
+F 2 "" H 2100 2350 60  0000 C CNN
+F 3 "" H 2100 2350 60  0000 C CNN
+	1    2050 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L tof-sensor-board-cache:VL53L0X U?
+U 1 1 5C8D383B
+P 2050 3550
+F 0 "U?" H 2050 4237 60  0000 C CNN
+F 1 "VL53L0X" H 2050 4131 60  0000 C CNN
+F 2 "" H 2100 3500 60  0000 C CNN
+F 3 "" H 2100 3500 60  0000 C CNN
+	1    2050 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L tof-sensor-board-cache:VL53L0X U?
+U 1 1 5C8D3899
+P 2050 4700
+F 0 "U?" H 2050 5387 60  0000 C CNN
+F 1 "VL53L0X" H 2050 5281 60  0000 C CNN
+F 2 "" H 2100 4650 60  0000 C CNN
+F 3 "" H 2100 4650 60  0000 C CNN
+	1    2050 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L tof-sensor-board-cache:VL53L0X U?
+U 1 1 5C8D38D8
+P 2050 5850
+F 0 "U?" H 2050 6537 60  0000 C CNN
+F 1 "VL53L0X" H 2050 6431 60  0000 C CNN
+F 2 "" H 2100 5800 60  0000 C CNN
+F 3 "" H 2100 5800 60  0000 C CNN
+	1    2050 5850
+	1    0    0    -1  
+$EndComp
+Wire Bus Line
+	2650 2300 3100 2300
+Wire Bus Line
+	3100 2300 3100 2950
+Wire Bus Line
+	3100 5750 2650 5750
+Wire Bus Line
+	2650 4600 3100 4600
+Connection ~ 3100 4600
+Wire Bus Line
+	3100 4600 3100 5750
+Wire Bus Line
+	2650 3450 3100 3450
+Connection ~ 3100 3450
+Wire Bus Line
+	3100 3450 3100 4600
+Wire Bus Line
+	2650 2400 2900 2400
+Wire Bus Line
+	2900 2400 2900 2800
+Wire Bus Line
+	2900 5850 2650 5850
+Wire Bus Line
+	2650 4700 2900 4700
+Connection ~ 2900 4700
+Wire Bus Line
+	2900 4700 2900 5850
+Wire Bus Line
+	2650 3550 2900 3550
+Connection ~ 2900 3550
+Wire Bus Line
+	2900 3550 2900 4700
+$Comp
+L MCU_Module:Arduino_Nano_v3.x A?
+U 1 1 5C8D3FC7
+P 4750 3850
+F 0 "A?" V 4796 2809 50  0000 R CNN
+F 1 "Arduino_Nano_v3.x" V 4705 2809 50  0000 R CNN
+F 2 "Module:Arduino_Nano" H 4900 2900 50  0001 L CNN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4750 2850 50  0001 C CNN
+	1    4750 3850
+	0    -1   -1   0   
+$EndComp
+Wire Bus Line
+	5150 3350 5150 2950
+Wire Bus Line
+	5150 2950 3100 2950
+Connection ~ 3100 2950
+Wire Bus Line
+	3100 2950 3100 3450
+Wire Bus Line
+	5250 3350 5250 2800
+Wire Bus Line
+	5250 2800 2900 2800
+Connection ~ 2900 2800
+Wire Bus Line
+	2900 2800 2900 3550
+Wire Wire Line
+	4450 4350 4450 4450
+Wire Wire Line
+	4450 4450 3350 4450
+Wire Wire Line
+	3350 4450 3350 2000
+Wire Wire Line
+	3350 2000 2650 2000
+Wire Wire Line
+	4550 4350 4550 4550
+Wire Wire Line
+	4550 4550 3200 4550
+Wire Wire Line
+	3200 4550 3200 3150
+Wire Wire Line
+	3200 3150 2650 3150
+Wire Wire Line
+	4650 4350 4650 4800
+Wire Wire Line
+	4650 4800 2800 4800
+Wire Wire Line
+	2800 4800 2800 4300
+Wire Wire Line
+	2800 4300 2650 4300
+Wire Wire Line
+	4750 4350 4750 5450
+Wire Wire Line
+	4750 5450 2650 5450
+$Comp
+L power:GND #PWR?
+U 1 1 5C8D5D77
+P 1450 2400
+F 0 "#PWR?" H 1450 2150 50  0001 C CNN
+F 1 "GND" V 1455 2272 50  0000 R CNN
+F 2 "" H 1450 2400 50  0001 C CNN
+F 3 "" H 1450 2400 50  0001 C CNN
+	1    1450 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C8D5DAD
+P 1450 3550
+F 0 "#PWR?" H 1450 3300 50  0001 C CNN
+F 1 "GND" V 1455 3422 50  0000 R CNN
+F 2 "" H 1450 3550 50  0001 C CNN
+F 3 "" H 1450 3550 50  0001 C CNN
+	1    1450 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C8D5DE3
+P 1450 4700
+F 0 "#PWR?" H 1450 4450 50  0001 C CNN
+F 1 "GND" V 1455 4572 50  0000 R CNN
+F 2 "" H 1450 4700 50  0001 C CNN
+F 3 "" H 1450 4700 50  0001 C CNN
+	1    1450 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C8D5E4A
+P 1450 5850
+F 0 "#PWR?" H 1450 5600 50  0001 C CNN
+F 1 "GND" V 1455 5722 50  0000 R CNN
+F 2 "" H 1450 5850 50  0001 C CNN
+F 3 "" H 1450 5850 50  0001 C CNN
+	1    1450 5850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8D5EFD
+P 1450 2100
+F 0 "#PWR?" H 1450 1950 50  0001 C CNN
+F 1 "+5V" V 1465 2228 50  0000 L CNN
+F 2 "" H 1450 2100 50  0001 C CNN
+F 3 "" H 1450 2100 50  0001 C CNN
+	1    1450 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8D5F47
+P 1450 3250
+F 0 "#PWR?" H 1450 3100 50  0001 C CNN
+F 1 "+5V" V 1465 3378 50  0000 L CNN
+F 2 "" H 1450 3250 50  0001 C CNN
+F 3 "" H 1450 3250 50  0001 C CNN
+	1    1450 3250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8D5F87
+P 1450 4400
+F 0 "#PWR?" H 1450 4250 50  0001 C CNN
+F 1 "+5V" V 1465 4528 50  0000 L CNN
+F 2 "" H 1450 4400 50  0001 C CNN
+F 3 "" H 1450 4400 50  0001 C CNN
+	1    1450 4400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8D5FC7
+P 1450 5550
+F 0 "#PWR?" H 1450 5400 50  0001 C CNN
+F 1 "+5V" V 1465 5678 50  0000 L CNN
+F 2 "" H 1450 5550 50  0001 C CNN
+F 3 "" H 1450 5550 50  0001 C CNN
+	1    1450 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8D61DD
+P 3750 3950
+F 0 "#PWR?" H 3750 3800 50  0001 C CNN
+F 1 "+5V" V 3765 4078 50  0000 L CNN
+F 2 "" H 3750 3950 50  0001 C CNN
+F 3 "" H 3750 3950 50  0001 C CNN
+	1    3750 3950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C8D6224
+P 5750 3750
+F 0 "#PWR?" H 5750 3500 50  0001 C CNN
+F 1 "GND" V 5755 3622 50  0000 R CNN
+F 2 "" H 5750 3750 50  0001 C CNN
+F 3 "" H 5750 3750 50  0001 C CNN
+	1    5750 3750
+	0    -1   -1   0   
+$EndComp
+$Sheet
+S 5200 4750 550  500 
+U 5C8D624B
+F0 "APA102" 50
+F1 "APA102.sch" 50
+F2 "LED_Data" I L 5200 4950 50 
+F3 "LED_Clk" I L 5200 4850 50 
+F4 "LED_VCC" I L 5200 5050 50 
+F5 "LED_GND" I L 5200 5150 50 
+$EndSheet
+Wire Wire Line
+	5200 4850 5150 4850
+Wire Wire Line
+	5150 4850 5150 4350
+Wire Wire Line
+	5200 4950 5050 4950
+Wire Wire Line
+	5050 4950 5050 4350
+$Comp
+L power:GND #PWR?
+U 1 1 5C8D6840
+P 5200 5150
+F 0 "#PWR?" H 5200 4900 50  0001 C CNN
+F 1 "GND" V 5205 5022 50  0000 R CNN
+F 2 "" H 5200 5150 50  0001 C CNN
+F 3 "" H 5200 5150 50  0001 C CNN
+	1    5200 5150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8D687D
+P 5200 5050
+F 0 "#PWR?" H 5200 4900 50  0001 C CNN
+F 1 "+5V" V 5215 5178 50  0000 L CNN
+F 2 "" H 5200 5050 50  0001 C CNN
+F 3 "" H 5200 5050 50  0001 C CNN
+	1    5200 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L MCU_Parallax:P8X32A-Q44 U?
+U 1 1 5C8D6A2A
+P 7900 3500
+F 0 "U?" H 7900 4778 50  0000 C CNN
+F 1 "P8X32A-Q44" H 7900 4687 50  0000 C CNN
+F 2 "Package_QFP:LQFP-44_10x10mm_P0.8mm" H 7900 4700 50  0001 C CNN
+F 3 "https://www.parallax.com/sites/default/files/downloads/P8X32A-Propeller-Datasheet-v1.4.0_0.pdf" H 7900 3500 50  0001 C CNN
+	1    7900 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 4350 5250 4500
+Wire Wire Line
+	5250 4500 6900 4500
+Wire Wire Line
+	6900 4500 6900 3500
+Wire Wire Line
+	6900 3500 7200 3500
+$Comp
+L Device:Buzzer BZ?
+U 1 1 5C8D714B
+P 9050 4300
+F 0 "BZ?" H 9203 4329 50  0000 L CNN
+F 1 "Buzzer" H 9203 4238 50  0000 L CNN
+F 2 "" V 9025 4400 50  0001 C CNN
+F 3 "~" V 9025 4400 50  0001 C CNN
+	1    9050 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 4600 8000 4600
+Wire Wire Line
+	8950 4400 8950 4600
+Wire Wire Line
+	8950 4200 8850 4200
+Wire Wire Line
+	8850 4200 8850 4000
+Wire Wire Line
+	8850 4000 8600 4000
+$EndSCHEMATC
