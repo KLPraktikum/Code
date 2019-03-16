@@ -39,7 +39,7 @@ barcode_7 = Barcode(4001686313046,'Gummibaeren', 1, 0, 0, 0, 0, 0, 0, 5.0)
 
 def insert_barcode(barcode):
     with conn:
-        c.execute("INSERT INTO barcodes VALUES(:barcode, :bezeichnung,:gelb,:schwarz,:gruen,:bio,:braunglas, :gruenglas, :weissglas, :punkte)", {'barcode': barcode.barcode,'bezeichnung': barcode.bezeichnung,'gelb': barcode.gelb, 'schwarz':barcode.gruen, 'gruen': barcode.gruen, 'bio': barcode.bio, 'braunglas': barcode.braunglas, 'gruenglas': barcode.gruenglas, 'weissglas': barcode.weissglas, 'punkte': barcode.punkte})
+        c.execute("INSERT INTO barcodes VALUES(:barcode, :bezeichnung,:gelb,:schwarz,:gruen,:bio,:braunglas, :gruenglas, :weissglas, :punkte)", {'barcode': barcode.barcode,'bezeichnung': barcode.bezeichnung,'gelb': barcode.gelb, 'schwarz':barcode.schwarz, 'gruen': barcode.gruen, 'bio': barcode.bio, 'braunglas': barcode.braunglas, 'gruenglas': barcode.gruenglas, 'weissglas': barcode.weissglas, 'punkte': barcode.punkte})
 
 def get_barcodes_by_name(barcodenummer):
     c.execute("SELECT * FROM barcodes WHERE barcode = :barcode", {'barcode': barcodenummer})
