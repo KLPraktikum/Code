@@ -16,8 +16,6 @@ CRGB leds[NUM_LEDS];
 #define BRIGHTNESS          96
 #define FRAMES_PER_SECOND  120
 
-SoftwareSerial controller(11, 12);
-
 const unsigned int SensorCount = 4;
 const unsigned int firstPin = 3;
 const uint8_t firstAddress = 0x2A;
@@ -40,6 +38,9 @@ void flashLeds(int selection);
 
 void setup()
 {
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  
   assembly[0].LEDSegment[0] = 59;
   assembly[0].LEDSegment[1] = 179;
   assembly[0].LEDSegmentSize[0] = 12;
@@ -133,11 +134,17 @@ void loop() {
       while (Chronos::DateTime::now() < timeout && !success) {
         if (assembly[selection].sensor.readRangeContinuousMillimeters() <= assembly[selection].calibration - measurementTolerance) {
           Serial.println("s");
+          digitalWrite(11, HIGH);
+          delay(20);
+          digitalWrite(11, LOW);
           success = true;
         }
       }
       if (!success)  {
         Serial.println("t");
+        digitalWrite(12, HIGH);
+        delay(20);
+        digitalWrite(12, LOW);
       }
       assembly[selection].sensor.stopContinuous();
     }
