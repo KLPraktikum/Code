@@ -29,3 +29,5 @@ Sämtlicher Code (Datenbank, Klasse, Main) für das Projekt
 | Propeller Board  	| 1,5W  	| 100%  	|1	|
 | VL53L0X  	| ((3,3×0,02×20+3,3×0,00001)÷20)×4=0,069697742W  	| 5%  	|4	|
 | APA102  	| ((5W÷3)×0,05)=0,083333333W  	| 5%  	|1	|
+
+Insgesamt: 1,6W im Durchschnitt
