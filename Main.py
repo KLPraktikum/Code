@@ -9,7 +9,7 @@ from barcode_db import update_punktezahl
 
 
 def main():
-    ser = serial.Serial('COM6', 115200)  # open serial port
+    ser = serial.Serial('/dev/ttyUSB0', 115200)  # open serial port
     #ser.open()
     print(ser.name)  # check which port was really used
     line = ser.readline().decode()
